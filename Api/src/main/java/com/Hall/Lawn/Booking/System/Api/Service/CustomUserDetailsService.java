@@ -1,21 +1,22 @@
 package com.Hall.Lawn.Booking.System.Api.Service;
-
-import lombok.RequiredArgsConstructor;
+import com.Hall.Lawn.Booking.System.Api.Repository.UserRepository;
+import com.Hall.Lawn.Booking.System.Api.Entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final com.Hall.Lawn.Booking.System.Api.Repository.UserRepository userRepository;
+    private final UserRepository userRepository;
+    CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        com.Hall.Lawn.Booking.System.Api.Entity.User.User user =
-                userRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email);
 
         if (user == null) {
             throw new UsernameNotFoundException("User not found with email: " + email);
