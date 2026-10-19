@@ -4,6 +4,8 @@ import com.Hall.Lawn.Booking.System.Api.DTO.RegisterRequest;
 import com.Hall.Lawn.Booking.System.Api.DTO.UserDto;
 import com.Hall.Lawn.Booking.System.Api.Entity.User;
 import com.Hall.Lawn.Booking.System.Api.Enums.Role;
+import com.Hall.Lawn.Booking.System.Api.Exception.UnprocessableEntityException;
+import com.Hall.Lawn.Booking.System.Api.Exception.UserNotFoundException;
 import com.Hall.Lawn.Booking.System.Api.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,11 +23,11 @@ public class UserService {
     public String saveUser(RegisterRequest request) {
         if (request.name() == null || request.email() == null || request.address() == null
                 || request.phone() == null || request.password() == null) {
-            return "Please fill all the fields";
+            throw new UnprocessableEntityException("Please fill all the fields");
         }
 
         if (userRepository.findByEmail(request.email()) != null) {
-            return "Email already exists";
+            throw new UnprocessableEntityException("Email already exists");
         }
 
         User user = new User();
@@ -45,7 +47,7 @@ public class UserService {
     public UserDto getUserByEmail(String email) {
         User user = userRepository.findByEmail(email);
         if (user == null) {
-            return null;
+            throw new UserNotFoundException("No user found with email: " + email);
         }
         return new UserDto(user.getName(), user.getEmail(), user.getAddress(), user.getPhone(), user.getRole());
     }

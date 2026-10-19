@@ -16,9 +16,9 @@ public class Hall_Images {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Lob
-    @Column(columnDefinition = "LONGLOB")
+    @Column(columnDefinition = "LONGBLOB")
     private byte[] image_data;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hall_id", nullable = false)
     private Halls halls;
 }

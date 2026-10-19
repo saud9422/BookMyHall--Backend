@@ -36,6 +36,10 @@ public class User {
     @ToString.Exclude
     private List<Halls> halls = new ArrayList<>();
 
+    @OneToMany(mappedBy = "bookingUser", cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude
+    private List<Booking> bookings = new ArrayList<>();
     @PrePersist
     protected void onCreate() {
         Date now = new Date();

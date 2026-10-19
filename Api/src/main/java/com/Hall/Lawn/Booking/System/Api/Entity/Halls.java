@@ -41,6 +41,8 @@ public class Halls {
 
     @OneToMany(mappedBy = "halls",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Hall_Images> images=new ArrayList<>();
+    @OneToMany(mappedBy =  "hall" ,cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings = new ArrayList<>();
 
     private Date created;
     private Date updated;

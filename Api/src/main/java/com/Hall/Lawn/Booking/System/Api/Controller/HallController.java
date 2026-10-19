@@ -2,15 +2,21 @@ package com.Hall.Lawn.Booking.System.Api.Controller;
 
 import com.Hall.Lawn.Booking.System.Api.Entity.Halls;
 import com.Hall.Lawn.Booking.System.Api.Entity.User;
+import com.Hall.Lawn.Booking.System.Api.Exception.UserNotFoundException;
 import com.Hall.Lawn.Booking.System.Api.Repository.UserRepository;
 import com.Hall.Lawn.Booking.System.Api.Service.HallService;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.UnsatisfiedServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/hall")
@@ -41,7 +47,7 @@ public class HallController {
         String username = authentication.getName();
         User user = userRepository.findByEmail(username);
         if (user == null) {
-            throw new RuntimeException("User Not Found");
+            throw new UserNotFoundException("No user found with email: " + username);
         } else {
           return hallService.addHall(hall,images,user);
         }

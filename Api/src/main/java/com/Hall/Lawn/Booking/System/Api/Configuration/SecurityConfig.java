@@ -43,7 +43,7 @@ public class SecurityConfig {
                 })
                 .authenticationProvider(daoAuthenticationProvider())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("/api/auth/register","/api/auth/login","/hall/all").permitAll()
+                        .requestMatchers("/api/auth/register","/api/auth/login").permitAll()
                         .anyRequest().authenticated()
                 );
 

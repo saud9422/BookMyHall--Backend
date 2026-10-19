@@ -37,11 +37,7 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<String> register(@Valid @RequestBody RegisterRequest request) {
         String response = userService.saveUser(request);
-        if ("success".equals(response)) {
-            return ResponseEntity.status(HttpStatus.OK).body(response);
-        }
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PostMapping("/login")
@@ -63,14 +59,8 @@ public class AuthController {
 
     @GetMapping("/profile")
     public ResponseEntity<UserDto> getProfile(@AuthenticationPrincipal UserDetails userDetails){
-        String email = userDetails.getUsername();
-        UserDto userDto = userService.getUserByEmail(email);
-        if (userDto == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-        }else {
-            return ResponseEntity.status(HttpStatus.OK).body(userDto);
-        }
-
+        UserDto userDto = userService.getUserByEmail(userDetails.getUsername());
+        return ResponseEntity.status(HttpStatus.OK).body(userDto);
     }
 
 }

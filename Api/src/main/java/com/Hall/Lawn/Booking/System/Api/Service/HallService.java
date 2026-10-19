@@ -5,6 +5,7 @@ import com.Hall.Lawn.Booking.System.Api.Entity.Halls;
 import com.Hall.Lawn.Booking.System.Api.Entity.User;
 import com.Hall.Lawn.Booking.System.Api.Repository.HallImagesRepository;
 import com.Hall.Lawn.Booking.System.Api.Repository.HallRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,9 +24,11 @@ public class HallService {
     public Halls getHallById(long id) {
         return hallRepository.findById(id).orElse(null);
     }
+
     public List<Halls> getAllHalls() {
         return hallRepository.findAll();
     }
+
     public Halls addHall(Halls hall, List<MultipartFile> images, User user) throws IOException {
         hall.setUser(user);
         Halls savedHall = hallRepository.save(hall);
@@ -42,4 +45,7 @@ public class HallService {
         }
         return savedHall;
     }
+
+
+
 }
