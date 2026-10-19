@@ -1,0 +1,221 @@
+```css
+/*
+  This is the main area of the Add Hall page.
+  It gives the page a light background and keeps
+  the form nicely centered on the screen.
+*/
+.add-hall-page {
+  min-height: 100vh;
+
+  background-color: #f8f9fa;
+
+  display: flex;
+  align-items: center;
+
+  padding: 50px 15px;
+}
+
+
+/*
+  This is the white box that contains the form.
+  The gold line at the top keeps the design
+  consistent with the login and register pages.
+*/
+.hall-form-card {
+  background-color: white;
+
+  padding: 35px 40px;
+
+  border-radius: 15px;
+
+  border-top: 4px solid rgb(234, 177, 8);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/*
+  Main heading of the form.
+*/
+.hall-title {
+  color: rgb(195, 146, 0);
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+
+/*
+  Small text displayed below the heading.
+*/
+.hall-subtitle {
+  color: #777;
+
+  font-size: 14px;
+
+  margin-bottom: 0;
+}
+
+
+/*
+  Labels above each input.
+*/
+.form-label {
+  color: #333;
+
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+
+/*
+  Normal text boxes and dropdowns.
+*/
+.form-control,
+.form-select {
+  padding: 11px 13px;
+
+  border: 1px solid #d5d5d5;
+
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+
+/*
+  When the user clicks inside an input,
+  the border becomes gold.
+*/
+.form-control:focus,
+.form-select:focus {
+  border-color: rgb(234, 177, 8);
+
+  box-shadow: 0 0 0 0.2rem rgba(234, 177, 8, 0.18);
+}
+
+
+/*
+  The rupee box used before the price inputs.
+*/
+.input-group-text {
+  background-color: rgb(234, 177, 8);
+
+  color: white;
+
+  border: 1px solid rgb(234, 177, 8);
+
+  font-weight: 600;
+}
+
+
+/*
+  Container for the Cancel and Add Hall buttons.
+*/
+.hall-buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+
+/*
+  Add Hall button.
+*/
+.btn-add-hall {
+  background-color: rgb(234, 177, 8);
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 25px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+
+/*
+  Small movement and darker gold color
+  when the mouse is placed over Add Hall.
+*/
+.btn-add-hall:hover {
+  background-color: rgb(195, 146, 0);
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(195, 146, 0, 0.3);
+}
+
+
+/*
+  Cancel button.
+*/
+.btn-cancel {
+  background-color: #f1f1f1;
+
+  color: #444;
+
+  border: none;
+
+  padding: 10px 25px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+
+/*
+  Cancel button changes slightly when
+  the mouse is placed over it.
+*/
+.btn-cancel:hover {
+  background-color: #ddd;
+
+  transform: translateY(-2px);
+}
+
+
+/*
+  Mobile screen adjustments.
+  On a small screen the form gets less padding
+  so there is more space for the inputs.
+*/
+@media (max-width: 576px) {
+
+  .add-hall-page {
+    padding: 25px 12px;
+  }
+
+  .hall-form-card {
+    padding: 25px 20px;
+  }
+
+  .hall-title {
+    font-size: 24px;
+  }
+
+  .hall-buttons {
+    flex-direction: column;
+  }
+
+  .btn-add-hall,
+  .btn-cancel {
+    width: 100%;
+  }
+}

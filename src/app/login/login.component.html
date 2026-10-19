@@ -1,0 +1,110 @@
+<section class="login-page">
+  <div class="container">
+
+    <div
+      *ngIf="loginError"
+      class="alert alert-danger text-center"
+      role="alert">
+      {{ errorMessege }}
+    </div>
+
+    <div class="login-card">
+      <div class="row">
+
+        <!-- Login Form -->
+        <div class="col-lg-6 d-flex justify-content-center">
+          <div class="login-form">
+
+            <h2>Login</h2>
+
+            <form class="w-100" style="max-width: 350px;">
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email">Your Email</label>
+
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  required
+                  placeholder="Enter your email"
+                  name="email"
+                  [(ngModel)]="user.email">
+              </div>
+
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">
+                  Password
+                </label>
+
+                <div class="input-group">
+
+                  <input
+                    [type]="showPassword ? 'text' : 'password'"
+                    id="password"
+                    class="form-control"
+                    required
+                    placeholder="Enter your password"
+                    name="password"
+                    autocomplete="current-password"
+                    [(ngModel)]="user.password">
+
+                  <!-- Show / Hide Password -->
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    (click)="togglePasswordVisibility()">
+
+                    <i
+                      class="bi"
+                      [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'">
+                    </i>
+
+                  </button>
+
+                </div>
+              </div>
+
+
+              <br>
+
+              <!-- Login Button -->
+              <button
+                type="submit"
+                class="btn login-btn w-100"
+                (click)="loginUser()">
+                Login
+              </button>
+
+
+              <!-- Register -->
+              <div class="text-center mt-3">
+                <a routerLink="" class="register-link">
+                  Don't have an account? Register
+                </a>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+
+        <!-- Image -->
+        <div class="col-lg-6 image-box">
+
+          <img
+            src="../../assets/images/ChatGPT Image Aug 16, 2026, 07_44_42 PM.png"
+            alt="Login"
+            class="login-image">
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

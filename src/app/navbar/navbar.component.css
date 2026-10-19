@@ -1,0 +1,90 @@
+
+.reveal {
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.navbar {
+  background-color: #ffffff;
+}
+
+.brand-logo {
+  width: 145px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar-nav {
+  gap: 15px;
+}
+
+.nav-link {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: rgb(234, 177, 8);
+}
+
+.btn-login {
+  color: rgb(234, 177, 8);
+  border: 1px solid rgb(234, 177, 8);
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.btn-login:hover {
+  background-color: rgb(234, 177, 8);
+  color: white;
+}
+
+.btn-register {
+  background-color: rgb(234, 177, 8);
+  color: white;
+  border: 1px solid rgb(234, 177, 8);
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.btn-register:hover {
+  background-color: rgb(249, 249, 249);
+  border-color: rgb(205, 151, 0);
+  color:  rgb(233, 172, 2);;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991px) {
+
+  .navbar-nav {
+    margin-top: 20px;
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+
+  .d-flex {
+    margin-top: 10px;
+  }
+}

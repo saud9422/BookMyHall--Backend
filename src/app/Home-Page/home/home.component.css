@@ -1,0 +1,317 @@
+
+.reveal {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal-reverse {
+  opacity: 0;
+  transform: translateX(100px);
+  transition:
+    opacity 1.2s ease-in-out,
+    transform 1.2s ease-in-out;
+}
+
+/* LEFT SIDE - final position */
+.reveal.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* RIGHT SIDE - final position */
+.reveal-reverse.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.hero-section {
+  background-color: #f3f1f1;
+  padding: 55px 0 80px;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-small-title {
+  display: inline-block;
+  color: rgb(234, 177, 8);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 5vw, 68px);
+  line-height: 1.05;
+  font-weight: 400;
+  color: #222222;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: rgb(234, 177, 8);
+}
+
+.hero-description {
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+
+
+.search-box {
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.search-field {
+  flex: 1;
+  min-width: 100px;
+}
+
+.search-field label {
+  display: block;
+  font-size: 11px;
+  color: #777777;
+  margin-left: 8px;
+  margin-bottom: 3px;
+}
+
+.search-field .form-control,
+.search-field .form-select {
+  border: none;
+  font-size: 13px;
+  color: #333333;
+  padding: 5px 8px;
+  box-shadow: none;
+}
+
+.search-field .form-control:focus,
+.search-field .form-select:focus {
+  box-shadow: none;
+}
+
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.search-btn {
+  background-color: rgb(234, 177, 8);
+  color: white;
+
+  border: none;
+  border-radius: 25px;
+
+  padding: 13px 22px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background-color: rgb(205, 151, 0);
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   IMAGE GRID
+========================= */
+
+.venue-image-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  max-width: 520px;
+
+  margin-left: auto;
+
+  padding: 10px;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.venue-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+}
+
+.venue-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.venue-image:hover img {
+  transform: scale(1.08);
+}
+
+
+/* Different rounded shapes
+   similar to reference design
+*/
+
+.image-1 {
+  border-radius: 45px 45px 15px 45px;
+}
+
+.image-2 {
+  border-radius: 45px;
+}
+
+.image-3 {
+  border-radius: 45px 45px 45px 15px;
+}
+
+.image-4 {
+  border-radius: 45px 15px 45px 45px;
+}
+
+.image-5 {
+  border-radius: 15px 45px 15px 45px;
+}
+
+.image-6 {
+  border-radius: 45px 45px 45px 15px;
+}
+
+.image-7 {
+  border-radius: 45px 45px 45px 15px;
+}
+
+.image-8 {
+  border-radius: 45px;
+}
+
+.image-9 {
+  border-radius: 15px 45px 45px 45px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .venue-image-grid {
+    margin: 20px auto 0;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+  .hero-section {
+    padding: 30px 0 50px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* Search becomes vertical */
+
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .search-field label {
+    text-align: left;
+  }
+
+  .search-field .form-control,
+  .search-field .form-select {
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .search-btn {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+
+  /* Image grid */
+
+  .venue-image-grid {
+    width: 100%;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .venue-image {
+    border-radius: 18px;
+  }
+
+}
+

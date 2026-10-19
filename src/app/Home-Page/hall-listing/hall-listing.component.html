@@ -1,0 +1,84 @@
+<div class="container py-5">
+
+  <!-- Page Heading -->
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">Available Halls</h1>
+    <p class="text-muted">
+      Find the perfect hall for your next event
+    </p>
+  </div>
+
+  <!-- Hall List -->
+  <div class="row g-4">
+
+    <!-- Single Card Template -->
+    <div
+      class="col-12 col-lg-6"
+      *ngFor="let hall of halls"
+    >
+
+      <div class="card h-100 shadow-sm border-0 hall-card">
+
+        <!-- Wide Image -->
+        <div class="hall-image-wrapper">
+          <img
+            [src]="hall.images || 'https://placehold.co/800x400?text=No+Image'"
+            [alt]="hall.name"
+            class="card-img-top hall-image"
+          >
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body p-4">
+
+          <div class="d-flex justify-content-between align-items-start mb-2">
+
+            <h3 class="card-title fw-bold mb-0">
+              {{ hall.name }}
+            </h3>
+
+            <span class="badge bg-warning text-dark">
+              {{ hall.halltype }}
+            </span>
+
+          </div>
+
+          <p class="text-muted">
+            {{ hall.description }}
+          </p>
+
+          <div class="hall-details">
+
+            <div class="mb-2">
+              <strong>Capacity:</strong>
+              {{ hall.capacity }} people
+            </div>
+
+            <div class="mb-2">
+              <strong>Location:</strong>
+              {{ hall.location }}
+            </div>
+
+            <div class="mb-3">
+              <strong>Price:</strong>
+              ₹{{ hall.price_per_hour }} / hour
+            </div>
+
+          </div>
+
+          <button
+            class="btn btn-primary w-100"
+            (click)="viewHall(hall.hall_id)"
+          >
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

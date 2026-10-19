@@ -1,0 +1,580 @@
+<div class="dashboard-wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Logo -->
+    <div class="logo-section">
+      <div class="logo-icon">
+        <i class="bi bi-house-heart-fill"></i>
+      </div>
+
+      <span class="logo-text">
+        BookMy<span>Hall</span>
+      </span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+
+      <button class="nav-item" [class.active]="activeSection === 'profile'" (click)="changeSection('profile')">
+
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </button>
+
+      <button class="nav-item" [class.active]="activeSection === 'bookings'" (click)="changeSection('bookings')">
+
+        <i class="bi bi-calendar-check"></i>
+        <span>Bookings</span>
+      </button>
+
+      <button class="nav-item" [class.active]="activeSection === 'list-hall'" (click)="changeSection('list-hall')">
+
+        <i class="bi bi-building"></i>
+        <span>List a Hall</span>
+      </button>
+
+      <button class="nav-item" [class.active]="activeSection === 'settings'" (click)="changeSection('settings')">
+
+        <i class="bi bi-gear"></i>
+        <span>Settings</span>
+      </button>
+
+    </nav>
+
+    <!-- Sidebar Bottom -->
+    <div class="sidebar-bottom">
+
+      <div class="sidebar-building-icon">
+        <i class="bi bi-building"></i>
+      </div>
+
+      <p>
+        Find the perfect hall<br>
+        for your special moments
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Top Header -->
+    <header class="top-header">
+
+      <div></div>
+
+      <div class="user-menu">
+
+        <div class="user-avatar">
+          {{ dashboard_data.user.name.charAt(0) }}
+        </div>
+
+        <span class="user-name">
+          {{ dashboard_data.user.name }}
+        </span>
+
+
+      </div>
+
+    </header>
+
+
+    <section *ngIf="activeSection === 'profile'" class="content-section">
+
+      <div class="page-title">
+        <h2>Profile Details</h2>
+
+
+      </div>
+
+
+      <div class="profile-layout">
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+
+          <div class="large-avatar">
+            {{ dashboard_data.user.name.charAt(0) }}
+          </div>
+
+          <h3>{{dashboard_data.user.name }}</h3>
+
+          <p class="email">
+            {{ dashboard_data.user.email }}
+          </p>
+
+          <span class="user-badge">
+            {{ dashboard_data.user.name }}
+          </span>
+
+
+          <div class="profile-contact">
+
+            <div>
+              <i class="bi bi-telephone"></i>
+              <span>{{ dashboard_data.user.phone }}</span>
+            </div>
+
+            <div>
+              <i class="bi bi-geo-alt"></i>
+              <span>{{ dashboard_data.user.address }}</span>
+            </div>
+
+            <div>
+              <i class="bi bi-calendar3"></i>
+              <span>Member since</span>
+              <p>{{dashboard_data.user.createdOn}}</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Details -->
+        <div class="details-card">
+
+          <div class="card-header">
+            <h3>Personal Information</h3>
+          </div>
+
+          <div class="details-grid">
+
+            <div class="detail-item">
+              <label>Full Name</label>
+              <p>{{ dashboard_data.user.name}}</p>
+            </div>
+
+            <div class="detail-item">
+              <label>Account Type</label>
+              <p>{{dashboard_data.user.role}}</p>
+            </div>
+
+            <div class="detail-item">
+              <label>Email Address</label>
+              <p>{{ dashboard_data.user.email }}</p>
+            </div>
+
+            <div class="detail-item">
+              <label>Member Since</label>
+              <p>{{dashboard_data.user.createdOn}}</p>
+            </div>
+
+            <div class="detail-item">
+              <label>Phone Number</label>
+              <p>{{ dashboard_data.user.phone }}</p>
+            </div>
+
+            <div class="detail-item">
+              <label>Location</label>
+              <p>{{ dashboard_data.user.address }}</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= BOOKINGS ================= -->
+
+    <section *ngIf="activeSection === 'bookings'" class="content-section">
+
+      <div class="section-heading">
+        <h2>Bookings</h2>
+        <p>Manage your upcoming and previous hall bookings.</p>
+      </div>
+
+
+      <!-- Booking Tabs -->
+      <div class="booking-tabs">
+
+        <button class="booking-tab active">
+          Upcoming Bookings
+        </button>
+
+        <button class="booking-tab">
+          Booking History
+        </button>
+
+      </div>
+
+
+      <!-- Booking List -->
+      <div class="booking-list">
+
+        <div class="booking-card" *ngFor="let booking of bookings">
+
+          <img [src]="booking.image" [alt]="booking.hallName" class="booking-image">
+
+
+          <div class="booking-info">
+
+            <h3>{{ booking.hallName }}</h3>
+
+            <div class="booking-meta">
+
+              <span>
+                <i class="bi bi-calendar3"></i>
+                {{ booking.date }}
+              </span>
+
+              <span>
+                <i class="bi bi-clock"></i>
+                {{ booking.time }}
+              </span>
+
+            </div>
+
+            <strong>
+              ₹{{ booking.amount | number }}
+            </strong>
+
+          </div>
+
+
+          <div class="booking-right">
+
+            <span class="status" [ngClass]="{
+                'confirmed': booking.status === 'Confirmed',
+                'pending': booking.status === 'Pending',
+                'completed': booking.status === 'Completed'
+              }">
+
+              {{ booking.status }}
+
+            </span>
+
+            <button class="outline-btn">
+              View Details
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= LIST A HALL ================= -->
+
+    <section *ngIf="activeSection === 'list-hall'" class="content-section">
+
+      <div class="section-heading">
+
+        <h2>List a Hall</h2>
+
+        <p>
+          Fill in the details below to list your hall and reach more customers.
+        </p>
+
+      </div>
+
+
+      <div class="form-card">
+
+        <div class="form-card-header">
+          <h3>Hall Details</h3>
+        </div>
+
+
+        <form (ngSubmit)="Savehall()">
+
+          <!-- Hall Name -->
+          <div class="form-group">
+
+            <label>
+              Hall Name <span>*</span>
+            </label>
+
+            <input type="text" name="hallName" [(ngModel)]="savehall_data.name" placeholder="Enter hall name" required>
+
+          </div>
+
+
+          <!-- Description -->
+          <div class="form-group">
+
+            <label>
+              Description <span>*</span>
+            </label>
+
+            <textarea name="description" [(ngModel)]="savehall_data.description" rows="4"
+              placeholder="Tell us about your hall" required>
+            </textarea>
+
+          </div>
+
+
+          <!-- Hall Type + Booking Mode -->
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label>Hall Type <span>*</span></label>
+
+              <select name="hallType" [(ngModel)]="savehall_data.halltype" required>
+
+                <option value="">
+                  Select hall type
+                </option>
+
+                <option value="MARRIAGE">
+                  Marriage
+                </option>
+
+                <option value="RECEPTION">
+                  Reception
+                </option>
+
+                <option value="EVENT">
+                  Event
+                </option>
+
+                <option value="BIRTHDAY">
+                  Birthday
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <!-- Address -->
+          <div class="form-group">
+
+            <label>Address <span>*</span></label>
+
+            <input type="text" name="address" placeholder="Enter complete hall address" required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Capacity <span>*</span></label>
+
+            <input type="number" name="capacity" placeholder="Enter complete hall capacity" required>
+
+          </div>
+          <!-- Capacity + Price -->
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label>Price Per Hour</label>
+
+              <input type="number" name="price_per_hour" placeholder="Enter Price per hour">
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label>Price Per Day</label>
+
+              <input type="number" name="price_per_day" [(ngModel)]="hall.price" placeholder="Enter price per day">
+
+            </div>
+
+          </div>
+
+
+          <!-- Images -->
+          <div class="form-group">
+
+            <label>Hall Images</label>
+
+            <div class="upload-box" (click)="imageInput.click()">
+
+              <i class="bi bi-cloud-arrow-up"></i>
+
+              <p>
+                Click to upload or drag and drop
+              </p>
+
+              <small>
+                JPG, PNG (Max 5MB each)
+              </small>
+
+              <input #imageInput type="file" name="images" multiple accept="image/jpeg, image/png, image/img"
+                (change)="onImagesSelected($event)" hidden>
+
+            </div>
+
+          </div>
+
+
+          <!-- Submit -->
+          <div class="form-actions">
+
+            <button type="submit" class="gold-btn">
+
+              Submit Listing
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SETTINGS ================= -->
+
+    <section *ngIf="activeSection === 'settings'" class="content-section">
+
+      <div class="section-heading">
+
+        <h2>Settings</h2>
+
+        <p>
+          Manage your account settings and preferences.
+        </p>
+
+      </div>
+
+
+      <!-- Account Information -->
+      <div class="settings-card">
+
+        <div class="settings-card-header">
+
+          <div>
+            <h3>Account Information</h3>
+          </div>
+
+          <button class="outline-btn">
+            <i class="bi bi-pencil"></i>
+            Edit
+          </button>
+
+        </div>
+
+
+        <div class="account-info">
+
+          <div class="small-avatar">
+            {{ dashboard_data.user.name.charAt(0) }}
+          </div>
+
+          <div>
+
+            <h4>{{dashboard_data.user.name }}</h4>
+
+            <p>{{ dashboard_data.user.email }}</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Change Password -->
+      <div class="settings-card">
+
+        <div class="settings-card-header">
+
+          <div>
+
+            <h3>Change Password</h3>
+
+            <p>
+              Update your password to keep your account secure.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <form (ngSubmit)="updatePassword()">
+
+          <div class="form-group">
+
+            <label>Current Password</label>
+
+            <div class="password-input">
+
+              <input type="password" placeholder="Enter current password">
+
+              <i class="bi bi-eye"></i>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>New Password</label>
+
+            <div class="password-input">
+
+              <input type="password" placeholder="Enter new password">
+
+              <i class="bi bi-eye"></i>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Confirm New Password</label>
+
+            <div class="password-input">
+
+              <input type="password" placeholder="Re-enter new password">
+
+              <i class="bi bi-eye"></i>
+
+            </div>
+
+          </div>
+
+
+          <button type="submit" class="gold-btn">
+
+            Update Password
+
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <!-- Logout -->
+      <div class="logout-section">
+
+        <button class="logout-btn" (click)="logout()">
+
+          <i class="bi bi-box-arrow-right"></i>
+          Logout
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
