@@ -1,8 +1,10 @@
+import { DecimalPipe, Time } from "@angular/common";
 import { hallImage } from "./save_hall";
 
 export interface Dashboard{
     user:User,
-    halls:Halls
+    halls:Halls,
+    bookings : Bookings[];
 }
 
 export interface User{
@@ -15,6 +17,21 @@ export interface User{
     role:String
 }
 
+export interface Bookings{
+    Id : Number,
+    bookingType : string,
+    bookingStatus : string,
+    bookingDate : Date,
+    bookingStartDate : Date,
+    bookingEndDate : Date,
+    bookingStartTime : Time,
+    bookingEndTime : Time,
+    totalBookingHours : Number,
+    bookingAmount : string,
+    hallName : String,
+    hallLocation : String
+
+}
 export interface Halls {
   id?: number;
   name: string;

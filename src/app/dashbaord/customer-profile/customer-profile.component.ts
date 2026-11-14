@@ -20,33 +20,6 @@ export class CustomerProfileComponent implements OnInit{
       this.getDashboard();
   }
 
-  bookings = [
-    {
-      hallName: 'Royal Banquet Hall',
-      date: '15 Sep 2026',
-      time: '05:00 PM - 10:00 PM',
-      amount: 25000,
-      status: 'Confirmed',
-      image: 'assets/images/hall-1.jpg'
-    },
-    {
-      hallName: 'Sunrise Convention Center',
-      date: '22 Sep 2026',
-      time: '11:00 AM - 04:00 PM',
-      amount: 18000,
-      status: 'Pending',
-      image: 'assets/images/hall-2.jpg'
-    },
-    {
-      hallName: 'The Grand Hall',
-      date: '05 Oct 2026',
-      time: '06:00 PM - 11:00 PM',
-      amount: 32000,
-      status: 'Completed',
-      image: 'assets/images/hall-3.jpg'
-    }
-  ];
-
   hall = {
     hallName: '',
     description: '',

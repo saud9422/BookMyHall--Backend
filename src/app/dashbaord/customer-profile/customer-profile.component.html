@@ -211,9 +211,7 @@
       <!-- Booking List -->
       <div class="booking-list">
 
-        <div class="booking-card" *ngFor="let booking of bookings">
-
-          <img [src]="booking.image" [alt]="booking.hallName" class="booking-image">
+        <div class="booking-card" *ngFor="let booking of dashboard_data.bookings">
 
 
           <div class="booking-info">
@@ -224,18 +222,18 @@
 
               <span>
                 <i class="bi bi-calendar3"></i>
-                {{ booking.date }}
+                {{ booking.bookingStartDate }}
               </span>
 
               <span>
                 <i class="bi bi-clock"></i>
-                {{ booking.time }}
+                {{ booking.bookingEndDate }}
               </span>
 
             </div>
 
             <strong>
-              ₹{{ booking.amount | number }}
+              ₹{{booking.bookingAmount }}
             </strong>
 
           </div>
@@ -244,12 +242,12 @@
           <div class="booking-right">
 
             <span class="status" [ngClass]="{
-                'confirmed': booking.status === 'Confirmed',
-                'pending': booking.status === 'Pending',
-                'completed': booking.status === 'Completed'
+                'confirmed': booking.bookingStatus === 'Confirmed',
+                'pending': booking.bookingStatus === 'Pending',
+                'completed': booking.bookingStatus === 'Completed'
               }">
 
-              {{ booking.status }}
+              {{ booking.bookingStatus}}
 
             </span>
 
