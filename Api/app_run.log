@@ -9,16 +9,19 @@
 [INFO] 
 [INFO] --- resources:3.5.0:resources (default-resources) @ Api ---
 [INFO] Copying 1 resource from src\main\resources to target\classes
-[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 3 resources from src\main\resources to target\classes
 [INFO] 
 [INFO] --- compiler:3.15.0:compile (default-compile) @ Api ---
-[INFO] Nothing to compile - all classes are up to date.
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 35 source files with javac [debug parameters release 17] to target\classes
+[INFO] /E:/New Projects/Hall & Lawn Booking System/Api/Api/src/main/java/com/Hall/Lawn/Booking/System/Api/Configuration/GlobalExceptionHandler.java: E:\New Projects\Hall & Lawn Booking System\Api\Api\src\main\java\com\Hall\Lawn\Booking\System\Api\Configuration\GlobalExceptionHandler.java uses or overrides a deprecated API.
+[INFO] /E:/New Projects/Hall & Lawn Booking System/Api/Api/src/main/java/com/Hall/Lawn/Booking/System/Api/Configuration/GlobalExceptionHandler.java: Recompile with -Xlint:deprecation for details.
 [INFO] 
 [INFO] --- resources:3.5.0:testResources (default-testResources) @ Api ---
 [INFO] skip non existing resourceDirectory E:\New Projects\Hall & Lawn Booking System\Api\Api\src\test\resources
 [INFO] 
 [INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ Api ---
-[INFO] Recompiling the module because of changed source code.
+[INFO] Recompiling the module because of changed dependency.
 [INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
 [INFO] 
 [INFO] <<< spring-boot:4.1.0:run (default-cli) < test-compile @ Api <<<
@@ -36,26 +39,26 @@
 
  :: Spring Boot ::                (v4.1.0)
 
-2026-10-19T17:28:46.634+05:30  INFO 13112 --- [GrandReserve-Api] [           main] c.H.L.Booking.System.Api.ApiApplication  : Starting ApiApplication using Java 17.0.18 with PID 13112 (E:\New Projects\Hall & Lawn Booking System\Api\Api\target\classes started by Acer in E:\New Projects\Hall & Lawn Booking System\Api\Api)
-2026-10-19T17:28:46.640+05:30  INFO 13112 --- [GrandReserve-Api] [           main] c.H.L.Booking.System.Api.ApiApplication  : No active profile set, falling back to 1 default profile: "default"
-2026-10-19T17:28:47.864+05:30  INFO 13112 --- [GrandReserve-Api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-10-19T17:28:48.029+05:30  INFO 13112 --- [GrandReserve-Api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 4 JPA repository interfaces.
-2026-10-19T17:28:48.707+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-10-19T17:28:48.720+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-10-19T17:28:48.720+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-10-19T17:28:48.807+05:30  INFO 13112 --- [GrandReserve-Api] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2110 ms
-2026-10-19T17:28:49.792+05:30  INFO 13112 --- [GrandReserve-Api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/core (MySQL 8.0)
-2026-10-19T17:28:49.953+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.064s)
-2026-10-19T17:28:49.982+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `core`: 2
-2026-10-19T17:28:49.989+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.f.core.internal.command.DbMigrate      : Schema `core` is up to date. No migration necessary.
-2026-10-19T17:28:50.095+05:30  INFO 13112 --- [GrandReserve-Api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-10-19T17:28:50.148+05:30  INFO 13112 --- [GrandReserve-Api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-10-19T17:28:50.565+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-10-19T17:28:50.599+05:30  INFO 13112 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-10-19T17:28:50.642+05:30  INFO 13112 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71eafb64
-2026-10-19T17:28:50.644+05:30  INFO 13112 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-10-19T17:28:50.683+05:30  WARN 13112 --- [GrandReserve-Api] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-10-19T17:28:50.704+05:30  INFO 13112 --- [GrandReserve-Api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-10-19T17:43:42.939+05:30  INFO 17820 --- [GrandReserve-Api] [           main] c.H.L.Booking.System.Api.ApiApplication  : Starting ApiApplication using Java 17.0.18 with PID 17820 (E:\New Projects\Hall & Lawn Booking System\Api\Api\target\classes started by Acer in E:\New Projects\Hall & Lawn Booking System\Api\Api)
+2026-10-19T17:43:42.940+05:30  INFO 17820 --- [GrandReserve-Api] [           main] c.H.L.Booking.System.Api.ApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-10-19T17:43:44.737+05:30  INFO 17820 --- [GrandReserve-Api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-19T17:43:45.083+05:30  INFO 17820 --- [GrandReserve-Api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 288 ms. Found 4 JPA repository interfaces.
+2026-10-19T17:43:47.592+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-19T17:43:47.639+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-19T17:43:47.639+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-19T17:43:51.778+05:30  INFO 17820 --- [GrandReserve-Api] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 8732 ms
+2026-10-19T17:43:56.800+05:30  INFO 17820 --- [GrandReserve-Api] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/core (MySQL 8.0)
+2026-10-19T17:43:57.193+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.190s)
+2026-10-19T17:43:57.246+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `core`: 3
+2026-10-19T17:43:57.262+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.f.core.internal.command.DbMigrate      : Schema `core` is up to date. No migration necessary.
+2026-10-19T17:43:57.691+05:30  INFO 17820 --- [GrandReserve-Api] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-19T17:43:57.893+05:30  INFO 17820 --- [GrandReserve-Api] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-19T17:43:59.683+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-19T17:43:59.806+05:30  INFO 17820 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-19T17:43:59.928+05:30  INFO 17820 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71eafb64
+2026-10-19T17:43:59.936+05:30  INFO 17820 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-19T17:44:00.146+05:30  WARN 17820 --- [GrandReserve-Api] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-19T17:44:00.246+05:30  INFO 17820 --- [GrandReserve-Api] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/core]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -67,70 +70,328 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-10-19T17:28:50.878+05:30 ERROR 13112 --- [GrandReserve-Api] [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Property 'com.Hall.Lawn.Booking.System.Api.Entity.Booking.bookingStartTime' is annotated '@Enumerated' but its type 'java.time.LocalTime' is not an enum
-2026-10-19T17:28:50.878+05:30  WARN 13112 --- [GrandReserve-Api] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Property 'com.Hall.Lawn.Booking.System.Api.Entity.Booking.bookingStartTime' is annotated '@Enumerated' but its type 'java.time.LocalTime' is not an enum
-2026-10-19T17:28:50.878+05:30  INFO 13112 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-10-19T17:28:50.927+05:30  INFO 13112 --- [GrandReserve-Api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-10-19T17:28:50.937+05:30  INFO 13112 --- [GrandReserve-Api] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-10-19T17:28:50.966+05:30  INFO 13112 --- [GrandReserve-Api] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-10-19T17:28:50.982+05:30 ERROR 13112 --- [GrandReserve-Api] [           main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Property 'com.Hall.Lawn.Booking.System.Api.Entity.Booking.bookingStartTime' is annotated '@Enumerated' but its type 'java.time.LocalTime' is not an enum
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.8.jar:7.0.8]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.8.jar:7.0.8]
-	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.1.0.jar:4.1.0]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.1.0.jar:4.1.0]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.1.0.jar:4.1.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.1.0.jar:4.1.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.1.0.jar:4.1.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.1.0.jar:4.1.0]
-	at com.Hall.Lawn.Booking.System.Api.ApiApplication.main(ApiApplication.java:11) ~[classes/:na]
-Caused by: org.hibernate.AnnotationException: Property 'com.Hall.Lawn.Booking.System.Api.Entity.Booking.bookingStartTime' is annotated '@Enumerated' but its type 'java.time.LocalTime' is not an enum
-	at org.hibernate.boot.model.internal.BasicValueBinder.prepareBasicAttribute(BasicValueBinder.java:778) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.BasicValueBinder.prepareValue(BasicValueBinder.java:367) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.BasicValueBinder.setType(BasicValueBinder.java:328) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.makePropertyAndValue(PropertyBinder.java:279) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:332) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.basicBinder(PropertyBinder.java:1296) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.propertyBinder(PropertyBinder.java:1180) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.bindBasicOrComposite(PropertyBinder.java:1074) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.bindProperty(PropertyBinder.java:948) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.buildProperty(PropertyBinder.java:831) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.PropertyBinder.processElementAnnotations(PropertyBinder.java:758) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.EntityBinder.processIdPropertiesIfNotAlready(EntityBinder.java:1132) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:443) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:259) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:247) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:197) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:323) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.coordinateProcessors(MetadataBuildingProcess.java:356) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:209) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1388) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1468) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1450) ~[hibernate-core-7.4.1.Final.jar:7.4.1.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:93) ~[spring-orm-7.0.8.jar:7.0.8]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:443) ~[spring-orm-7.0.8.jar:7.0.8]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:436) ~[spring-orm-7.0.8.jar:7.0.8]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:411) ~[spring-orm-7.0.8.jar:7.0.8]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:419) ~[spring-orm-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.8.jar:7.0.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.8.jar:7.0.8]
-	... 15 common frames omitted
-
+2026-10-19T17:44:06.651+05:30  INFO 17820 --- [GrandReserve-Api] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-19T17:44:07.207+05:30  INFO 17820 --- [GrandReserve-Api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19T17:44:07.671+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-19T17:44:08.779+05:30  INFO 17820 --- [GrandReserve-Api] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-10-19T17:44:08.780+05:30  WARN 17820 --- [GrandReserve-Api] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-10-19T17:44:14.286+05:30  INFO 17820 --- [GrandReserve-Api] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-19T17:44:14.332+05:30  INFO 17820 --- [GrandReserve-Api] [           main] c.H.L.Booking.System.Api.ApiApplication  : Started ApiApplication in 32.158 seconds (process running for 32.904)
+Springboot Application is Running Successfully....
+2026-10-19T17:44:59.196+05:30  INFO 17820 --- [GrandReserve-Api] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-19T17:44:59.199+05:30  INFO 17820 --- [GrandReserve-Api] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-19T17:44:59.207+05:30  INFO 17820 --- [GrandReserve-Api] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    insert 
+    into
+        user
+        (address, created_on, email, gender, is_active, name, password, phone, role, updated_on) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2026-10-19T17:45:01.876+05:30  WARN 17820 --- [GrandReserve-Api] [nio-8080-exec-3] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [145] milliseconds.
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        h1_0.hall_id,
+        h1_0.capacity,
+        h1_0.created,
+        h1_0.description,
+        h1_0.halltype,
+        h1_0.location,
+        h1_0.hall_name,
+        h1_0.price_per_day,
+        h1_0.price_per_hour,
+        h1_0.updated,
+        h1_0.user_id 
+    from
+        halls h1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    insert 
+    into
+        user
+        (address, created_on, email, gender, is_active, name, password, phone, role, updated_on) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        h1_0.hall_id,
+        h1_0.capacity,
+        h1_0.created,
+        h1_0.description,
+        h1_0.halltype,
+        h1_0.location,
+        h1_0.hall_name,
+        h1_0.price_per_day,
+        h1_0.price_per_hour,
+        h1_0.updated,
+        h1_0.user_id 
+    from
+        halls h1_0 
+    where
+        h1_0.hall_id=? 
+    for
+        updateof h1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        case 
+            when count(b1_0.booking_id)>0 
+                then true 
+            else false 
+    end 
+from
+    bookings b1_0 
+where
+    b1_0.hall_id=? 
+    and b1_0.booking_start_date<=? 
+    and b1_0.booking_end_date>=? 
+    and b1_0.booking_status<>?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (booking_date, booking_end_date, booking_end_time, booking_start_date, booking_start_time, booking_status, booking_type, user_id, created_at, hall_id, total_amount, total_booking_hours, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        h1_0.hall_id,
+        h1_0.capacity,
+        h1_0.created,
+        h1_0.description,
+        h1_0.halltype,
+        h1_0.location,
+        h1_0.hall_name,
+        h1_0.price_per_day,
+        h1_0.price_per_hour,
+        h1_0.updated,
+        h1_0.user_id 
+    from
+        halls h1_0 
+    where
+        h1_0.hall_id=? 
+    for
+        updateof h1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.address,
+        u1_0.created_on,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.is_active,
+        u1_0.name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role,
+        u1_0.updated_on 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    insert 
+    into
+        bookings
+        (booking_date, booking_end_date, booking_end_time, booking_start_date, booking_start_time, booking_status, booking_type, user_id, created_at, hall_id, total_amount, total_booking_hours, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        b1_0.booking_id,
+        b1_0.booking_date,
+        b1_0.booking_end_date,
+        b1_0.booking_end_time,
+        b1_0.booking_start_date,
+        b1_0.booking_start_time,
+        b1_0.booking_status,
+        b1_0.booking_type,
+        b1_0.user_id,
+        b1_0.created_at,
+        b1_0.hall_id,
+        b1_0.total_amount,
+        b1_0.total_booking_hours,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.hall_id=?
+Hibernate: 
+    select
+        b1_0.booking_id,
+        b1_0.booking_date,
+        b1_0.booking_end_date,
+        b1_0.booking_end_time,
+        b1_0.booking_start_date,
+        b1_0.booking_start_time,
+        b1_0.booking_status,
+        b1_0.booking_type,
+        b1_0.user_id,
+        b1_0.created_at,
+        b1_0.hall_id,
+        b1_0.total_amount,
+        b1_0.total_booking_hours,
+        b1_0.updated_at 
+    from
+        bookings b1_0 
+    where
+        b1_0.hall_id=?
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  11.357 s
-[INFO] Finished at: 2026-10-19T17:28:51+05:30
+[INFO] Total time:  08:45 min
+[INFO] Finished at: 2026-10-19T17:51:21+05:30
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.1.0:run (default-cli) on project Api: Process terminated with exit code: 1 -> [Help 1]
 [ERROR] 

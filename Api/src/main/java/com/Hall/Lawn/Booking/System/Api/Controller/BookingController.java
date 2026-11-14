@@ -1,17 +1,12 @@
 package com.Hall.Lawn.Booking.System.Api.Controller;
 
-import com.Hall.Lawn.Booking.System.Api.DTO.ApiResponse;
-import com.Hall.Lawn.Booking.System.Api.DTO.BookingByDayDto;
-import com.Hall.Lawn.Booking.System.Api.DTO.BookingByHourDto;
+import com.Hall.Lawn.Booking.System.Api.DTO.*;
 import com.Hall.Lawn.Booking.System.Api.Entity.Booking;
 import com.Hall.Lawn.Booking.System.Api.Service.BookingService;
 import com.Hall.Lawn.Booking.System.Api.Service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,21 +21,22 @@ public class BookingController {
     }
 
     @PostMapping("/saveBookingByDay")
-    public ResponseEntity<ApiResponse<Booking>> saveBookingByDayDto(BookingByDayDto bookingByDayDto) {
+    public ResponseEntity<ApiResponse<BookingResponseForDay>> saveBookingByDayDto(@RequestBody BookingByDayDto bookingByDayDto) {
 
-       Booking booking = bookingService.getBookingByDayDto(bookingByDayDto);
+       BookingResponseForDay booking = bookingService.getBookingByDayDto(bookingByDayDto);
 
        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(
                true,
                "Booking Created Successfully",
                booking
+
        ));
     }
 
     @PostMapping("/saveBookingByHour")
-    public ResponseEntity<ApiResponse<Booking>>  saveBookingByHourDto(BookingByHourDto bookingByHourDto) {
+    public ResponseEntity<ApiResponse<BookingResponseForHours>> saveBookingByHourDto(@RequestBody BookingByHourDto bookingByHourDto) {
 
-        Booking booking = bookingService.getBookingByHourDto(bookingByHourDto);
+        BookingResponseForHours booking = bookingService.getBookingByHourDto(bookingByHourDto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(
                 true,

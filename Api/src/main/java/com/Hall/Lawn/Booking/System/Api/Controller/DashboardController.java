@@ -3,6 +3,7 @@ package com.Hall.Lawn.Booking.System.Api.Controller;
 import com.Hall.Lawn.Booking.System.Api.DTO.DashboardDto;
 import com.Hall.Lawn.Booking.System.Api.Entity.User;
 import com.Hall.Lawn.Booking.System.Api.Service.DashboardService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -25,6 +26,6 @@ public class DashboardController {
     public ResponseEntity<DashboardDto> getConsumerDashboard(@AuthenticationPrincipal UserDetails userDetails) {
         String username = userDetails.getUsername();
        DashboardDto Response = dashboardService.getConsumerDashboard(username);
-        return ResponseEntity.ok(Response);
+        return ResponseEntity.status(HttpStatus.OK).body(Response);
     }
 }

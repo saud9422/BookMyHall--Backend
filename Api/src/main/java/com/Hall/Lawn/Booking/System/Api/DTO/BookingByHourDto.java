@@ -10,6 +10,7 @@ import java.time.LocalTime;
 
 public record BookingByHourDto(
         Long hall_id,
+        LocalDate bookingDate,
         LocalTime BookingStartTime,
         LocalTime BookingEndTime,
         BigDecimal totalAmount

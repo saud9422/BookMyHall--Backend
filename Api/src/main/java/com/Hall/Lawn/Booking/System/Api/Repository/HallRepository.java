@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface HallRepository extends JpaRepository<Halls, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @Query("SELECT h FROM Hall h WHERE h.id = :hallId")
+    @Query("SELECT h FROM Halls h WHERE h.id = :hallId")
     Optional<Halls> findByIdForUpdate(
             @Param("hallId") Long hallId
     );

@@ -37,7 +37,6 @@ public class Booking {
     private LocalDate bookingEndDate;
 
 
-    @Enumerated(EnumType.STRING)
     private LocalTime bookingStartTime;
 
     private LocalTime bookingEndTime;
